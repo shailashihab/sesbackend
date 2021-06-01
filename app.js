@@ -36,38 +36,38 @@ app.get('/adminStudent', async function(req, res, next) {
         res.send(students);
     });
 });
-app.post('/adminStudent/add', async function (req, res, next){
-    var newStudent = new AdminStudentData({
-        addLine1: req.body.PersonalDetails.addLine1,
-        addLine2: req.body.PersonalDetails.addLine2,
-        city: req.body.PersonalDetails.city,
-        age:req.body.PersonalDetails.age,
-        Gender:req.body.PersonalDetails.Gender,
-        contactNo: req.body.PersonalDetails.contactNo,
-        country: req.body.PersonalDetails.country,
-        email: req.body.PersonalDetails.email,
-        firstName: req.body.PersonalDetails.firstName,
-        lastName: req.body.PersonalDetails.lastName,
-        pincode: req.body.PersonalDetails.pincode,
-        state: req.body.PersonalDetails.state,
-        activities: req.body.EdDetails.activities,
-        description: req.body.EdDetails.description,
-        endDate: req.body.EdDetails.endDate,
-        fieldOfStudy: req.body.EdDetails.fieldOfStudy,
-        grade: req.body.EdDetails.grade,
-        highestDegree: req.body.EdDetails.highestDegree,
-        school: req.body.EdDetails.school,
-        startDate: req.body.EdDetails.startDate,
-        skillsTextarea:req.body.EdDetails.skillsTextarea
-    })
-  try {
-    doc = await newStudent.save();
-    return res.status(201).json(doc);
-  }
-  catch (err) {
-    return res.status(501).json(err);
-  }
-});
+// app.post('/adminStudent/add', async function (req, res, next){
+//     var newStudent = new AdminStudentData({
+//         addLine1: req.body.PersonalDetails.addLine1,
+//         addLine2: req.body.PersonalDetails.addLine2,
+//         city: req.body.PersonalDetails.city,
+//         age:req.body.PersonalDetails.age,
+//         Gender:req.body.PersonalDetails.Gender,
+//         contactNo: req.body.PersonalDetails.contactNo,
+//         country: req.body.PersonalDetails.country,
+//         email: req.body.PersonalDetails.email,
+//         firstName: req.body.PersonalDetails.firstName,
+//         lastName: req.body.PersonalDetails.lastName,
+//         pincode: req.body.PersonalDetails.pincode,
+//         state: req.body.PersonalDetails.state,
+//         activities: req.body.EdDetails.activities,
+//         description: req.body.EdDetails.description,
+//         endDate: req.body.EdDetails.endDate,
+//         fieldOfStudy: req.body.EdDetails.fieldOfStudy,
+//         grade: req.body.EdDetails.grade,
+//         highestDegree: req.body.EdDetails.highestDegree,
+//         school: req.body.EdDetails.school,
+//         startDate: req.body.EdDetails.startDate,
+//         skillsTextarea:req.body.EdDetails.skillsTextarea
+//     })
+//   try {
+//     doc = await newStudent.save();
+//     return res.status(201).json(doc);
+//   }
+//   catch (err) {
+//     return res.status(501).json(err);
+//   }
+// });
 app.get('/adminStudent/:id',async function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
@@ -410,7 +410,4 @@ try {
 
 })
   
-
-
-
 app.listen(PORT,()=>{console.log('Server at 3000')});
