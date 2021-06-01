@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/PROJECTSICTAK',{useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://userone:userone@anglibapp.xcifr.mongodb.net/ANGLIBAPP?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true });
 
 const Schema = mongoose.Schema;
 
