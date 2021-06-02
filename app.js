@@ -31,6 +31,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(formidable());
 
 app.get('/adminStudent', async function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
     await AdminStudentData.find()
     .then(function(students){
         res.send(students);
@@ -361,6 +363,8 @@ app.delete('/adminStudent/:id', async function(req,res){
     })
 })
 app.post('/adminStudent/AddDetails/', async function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
 
 var files = [];
 var fileKeys = Object.keys(req.files);
